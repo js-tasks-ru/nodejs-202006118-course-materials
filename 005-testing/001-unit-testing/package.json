@@ -1,0 +1,43 @@
+{
+  "name": "005-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "test:coverage": "nyc npm run test",
+    "test:mutate": "stryker run",
+    "test:all": "npm run test & npm run test:coverage & npm run test:mutate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/mocha": "^7.0.2",
+    "axios": "^0.19.2",
+    "koa": "^2.11.0"
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "^3.1.0",
+    "@stryker-mutator/html-reporter": "^3.1.0",
+    "@stryker-mutator/javascript-mutator": "^3.1.0",
+    "@stryker-mutator/mocha-framework": "^3.1.0",
+    "@stryker-mutator/mocha-runner": "^3.1.0",
+    "@types/chai": "^4.2.11",
+    "@types/chai-as-promised": "^7.1.2",
+    "@types/sinon": "^9.0.0",
+    "@types/sinon-chai": "^3.2.4",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "husky": "^4.2.5",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.1",
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  }
+}
